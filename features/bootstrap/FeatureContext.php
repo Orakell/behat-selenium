@@ -37,7 +37,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     }
 
     /**
-     * @Then /^I should see yesterday's date with format "yyyy\-mm\-dd"$/
+     * @Then /^I should see yesterday's date with format "$arg1"$/
      */
     public function iShouldSeeYesterdaySDateWithFormat($arg1)
     {
