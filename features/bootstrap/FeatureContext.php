@@ -51,7 +51,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
      */
     public function iCheckTheCheckbox($checkboxId)
     {
-        $this->checkOption('#' . $checkboxId);
+        $this->checkOption($checkboxId);
     }
 
     /**
@@ -59,6 +59,6 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
      */
     public function theCheckboxMustBeUnchecked($checkboxId)
     {
-        $this->assertCheckboxNotChecked('#' . $checkboxId);
+        $this->assertCheckboxNotChecked($checkboxId);
     }
 }
