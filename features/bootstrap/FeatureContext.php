@@ -27,7 +27,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     }
 
     /**
-     * @Alors je devrais voir la date d'hier au format :format
+     * @Alors /^je devrais voir la date d'hier au format ":format"$/
      */
     public function jeDevraisVoirLaDateDHierAuFormat($format)
     {
@@ -36,8 +36,10 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
         $this->assertPageMatchesText($yesterday);
     }
 
+
+
     /**
-     * @Then I should see yesterday's date with format :format
+     * @Then /^I should see yesterday's date with format ":format"$/
      */
     public function iShouldSeeYesterdaySDateWithFormat($format)
     {
