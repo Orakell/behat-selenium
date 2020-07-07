@@ -33,7 +33,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     {
         $yesterday = date($format, strtotime("-1 days"));
 
-        $this->assertPageMatchesText($yesterday);
+        $this->assertElementContainsText('#yesterday', $yesterday);
     }
 
     /**
@@ -43,6 +43,6 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     {
         $yesterday = date($format, strtotime("-1 days"));
 
-        $this->assertPageMatchesText($yesterday);
+        $this->assertElementContainsText('#yesterday', $yesterday);
     }
 }
