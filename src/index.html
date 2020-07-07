@@ -10,8 +10,18 @@
 </head>
 <body>
     <div id="layout"></div>
+    <p id="yesterday"></p>
     <script type="text/javascript">
         document.getElementById('layout').innerText = 'Hello World Continuous';
+
+        let date = new Date();
+        date.setDate(date.getDate() - 1);
+
+        let ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(date);
+        let mo = new Intl.DateTimeFormat('fr', { month: '2-digit' }).format(date);
+        let da = new Intl.DateTimeFormat('fr', { day: '2-digit' }).format(date);
+
+        document.getElementById('yesterday').innerText = ye + '-' + mo + '-' + da;
     </script>
 </body>
 </html>
