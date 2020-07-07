@@ -27,21 +27,21 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     }
 
     /**
-     * @Alors /^je devrais voir la date d'hier au format "yyyy\-mm\-dd"$/
+     * @Alors je devrais voir la date d'hier au format :format
      */
-    public function jeDevraisVoirLaDateDhierAuFormat($arg1)
+    public function jeDevraisVoirLaDateDHierAuFormat($format)
     {
-        $yesterday = date($arg1, strtotime("-1 days"));
+        $yesterday = date($format, strtotime("-1 days"));
 
         $this->assertPageMatchesText($yesterday);
     }
 
     /**
-     * @Then /^I should see yesterday's date with format "$arg1"$/
+     * @Then I should see yesterday's date with format :format
      */
-    public function iShouldSeeYesterdaySDateWithFormat($arg1)
+    public function iShouldSeeYesterdaySDateWithFormat($format)
     {
-        $yesterday = date($arg1, strtotime("-1 days"));
+        $yesterday = date($format, strtotime("-1 days"));
 
         $this->assertPageMatchesText($yesterday);
     }
