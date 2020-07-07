@@ -41,4 +41,14 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
 
         $this->assertPageMatchesText($yesterday);
     }
+
+    /**
+     * @Then /^I should see yesterday's date with format "yyyy\-mm\-dd"$/
+     */
+    public function iShouldSeeYesterdaySDateWithFormat($arg1)
+    {
+        $yesterday = date($arg1, strtotime("-1 days"));
+
+        $this->assertPageMatchesText($yesterday);
+    }
 }
