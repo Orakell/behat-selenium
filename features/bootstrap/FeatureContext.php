@@ -44,5 +44,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
         $yesterday = date($format, strtotime("-1 days"));
 
         $this->assertElementContainsText('#yesterday', $yesterday);
+        
+        $this->printCurrentUrl();
     }
 }
