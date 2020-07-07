@@ -1,8 +1,6 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 
 /**
  * Defines application features from the specific context.
@@ -26,5 +24,21 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
     public function iWaitDuringMs($arg1)
     {
         $this->getSession()->wait($arg1);
+    }
+
+    //   @javascript
+    //  Scenario: Le contenu de la page s'affiche avec selenium
+    //    Quand je suis sur la page d'accueil
+    //    Et que j'attends pendant 500 ms
+    //    Alors je devrais voir la date d'hier au format "yyyy-mm-dd"
+
+    /**
+     * @Alors je devrais voir la date d'hier au format :format
+     */
+    public function jeDevraisVoirLaDateDhierAuFormat($format)
+    {
+        $yesterday = date($format, strtotime("-1 days"));
+
+        $this->assertPageMatchesText($yesterday);
     }
 }
