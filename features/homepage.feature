@@ -17,4 +17,4 @@ Feature: Homepage default behavior
   Scenario: Le contenu de la page s'affiche avec selenium
     Quand je suis sur la page d'accueil
     Et que j'attends pendant 500 ms
-    Alors je devrais voir la date d'hier au format "yyyy-mm-dd"
+    Alors je devrais voir la date d'hier au format "yy-m-d"
