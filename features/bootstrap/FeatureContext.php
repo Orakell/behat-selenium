@@ -26,18 +26,12 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
         $this->getSession()->wait($arg1);
     }
 
-    //   @javascript
-    //  Scenario: Le contenu de la page s'affiche avec selenium
-    //    Quand je suis sur la page d'accueil
-    //    Et que j'attends pendant 500 ms
-    //    Alors je devrais voir la date d'hier au format "yyyy-mm-dd"
-
     /**
-     * @Alors je devrais voir la date d'hier au format :format
+     * @Alors /^je devrais voir la date d'hier au format "yyyy\-mm\-dd"$/
      */
-    public function jeDevraisVoirLaDateDhierAuFormat($format)
+    public function jeDevraisVoirLaDateDhierAuFormat($arg1)
     {
-        $yesterday = date($format, strtotime("-1 days"));
+        $yesterday = date($arg1, strtotime("-1 days"));
 
         $this->assertPageMatchesText($yesterday);
     }
