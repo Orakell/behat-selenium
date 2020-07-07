@@ -12,7 +12,7 @@ check()
 
 	echo "Calling google"
 	session=`echo $session | awk -F'"' '{print $6}'`
-	result=`curl -X POST http://localhost:4444/wd/hub/session/$session/url -d '{"url":"http://www.google.com"}' | grep '"state":"success"'`
+	result=`curl -X POST http://localhost:4444/wd/hub/session/$session/url -d '{"url":"https://google.com/"}' | grep '"state":"success"'`
 
 	if [ -z $result ]
 	then
