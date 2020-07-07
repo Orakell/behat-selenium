@@ -18,3 +18,11 @@ Feature: Homepage default behavior
     Quand je suis sur la page d'accueil
     Et que j'attends pendant 500 ms
     Alors je devrais voir la date d'hier au format "yy-m-d"
+
+  @javascript
+  Scenario: I am on the home page, the CGV checkbox must be unchecked
+    When I am on the homepage
+    Then I wait during 500 ms
+    Then I check the "cgv" checkbox
+    Then I reload the page
+    Then the "cgv" checkbox must be unchecked

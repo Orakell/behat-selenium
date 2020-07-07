@@ -44,7 +44,21 @@ class FeatureContext extends \Behat\MinkExtension\Context\MinkContext implements
         $yesterday = date($format, strtotime("-1 days"));
 
         $this->assertElementContainsText('#yesterday', $yesterday);
-        
-        $this->printCurrentUrl();
+    }
+
+    /**
+     * @Then /^I check the "([^"]*)" checkbox$/
+     */
+    public function iCheckTheCheckbox($checkboxId)
+    {
+        $this->checkOption('#' . $checkboxId);
+    }
+
+    /**
+     * @Then /^the "([^"]*)" checkbox must be unchecked$/
+     */
+    public function theCheckboxMustBeUnchecked($checkboxId)
+    {
+        $this->assertCheckboxNotChecked('#' . $checkboxId);
     }
 }
