@@ -7,3 +7,9 @@ default:
             javascript_session: selenium2
             selenium2:
                 wd_host: http://selenium:4444/wd/hub
+    suites:
+        custom:
+            paths:
+                features:  features/custom
+            contexts:
+                - CustomFeatureContext
